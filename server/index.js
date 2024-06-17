@@ -395,7 +395,10 @@ app.get('/pagina2',(req,res)=>{
 res.sendFile(process.cwd() + '/cliente/reproducir.html')
 })
 app.get('/',(req,res)=>{
-  res.header('Access-Control-Allow-Origin','*')
+  //res.header('Access-Control-Allow-Origin','*')
+res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.send('<h1> Esto es un chat </h1>')
 })
 

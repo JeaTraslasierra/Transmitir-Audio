@@ -364,7 +364,17 @@ const app= express();
 
 app.use(cors());
 const server= createServer(app)
-const io= new Server(server)
+//const io= new Server(server)
+
+const io = new Server(server, {
+  cors: {
+    origin: '*', // Aquí puedes ajustar el origen según tus necesidades específicas
+    methods: ['GET', 'POST', 'OPTIONS'], // Métodos permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'] // Encabezados permitidos
+  }
+});
+
+
 io.on('connection',(socket)=>{
   console.log('un usuario se a conectado')
   socket.on('disconnect' , ()=>{

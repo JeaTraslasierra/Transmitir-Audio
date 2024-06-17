@@ -399,7 +399,8 @@ app.get('/',(req,res)=>{
 res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.send('<h1> Esto es un chat </h1>')
+  res.send('<h1> Esto es un chat </h1>');
+  console.log("conectado a la raiz");
 })
 
 server.listen(port, () =>{

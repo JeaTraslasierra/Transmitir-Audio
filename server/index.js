@@ -362,7 +362,7 @@ import cors from 'cors';
 const port= process.env.PORT ?? 3000;
 const app= express();
 app.use(cors({
-  origin: 'http://127.0.0.1:24243'
+  origin: '*'
 }));
 //app.use(cors());
 const server= createServer(app)

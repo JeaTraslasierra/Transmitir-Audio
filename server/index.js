@@ -394,6 +394,10 @@ app.get('/pagina1',(req,res)=>{
 app.get('/pagina2',(req,res)=>{
 res.sendFile(process.cwd() + '/cliente/reproducir.html')
 })
+app.get('/',(req,res)=>{
+  res.header('Access-Control-Allow-Origin','*')
+  res.send('<h1> Esto es un chat </h1>')
+})
 
 server.listen(port, () =>{
   console.log(` servidor corriendo ${port}`)

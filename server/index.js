@@ -361,8 +361,11 @@ import cors from 'cors';
 
 const port= process.env.PORT ?? 3000;
 const app= express();
-
-app.use(cors());
+app.use(cors(
+  {
+    origin:'*'
+  }))
+//app.use(cors());
 const server= createServer(app)
 //const io= new Server(server)
 
